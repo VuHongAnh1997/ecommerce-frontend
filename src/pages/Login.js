@@ -1,10 +1,14 @@
 import React, {useState} from "react";
-import LoginService from "../service/login";
+import LoginService from "../service/loginService";
 import { useNavigate } from 'react-router-dom';
+import {useDispatch} from "react-redux";
+import {login} from "../store/actions/usersActions";
 
 const Login = () => {
 
     const navigate = useNavigate();
+
+    const dispatch = useDispatch()
 
     const [formData, setFormData] = useState({
         username: "",
@@ -21,11 +25,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const res = await LoginService.login(formData)
-        if(res.status === 200) {
-            console.log(res.data)
-            navigate("/home")
-        }
+        dispatch(login(formData))
     }
 
    return (

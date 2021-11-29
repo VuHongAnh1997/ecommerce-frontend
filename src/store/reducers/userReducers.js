@@ -1,18 +1,17 @@
+import {LOGIN} from '../types'
+
 const initialState = {
-    users:[],
-    loading:true
+    accessToken: null,
 }
 
 export default function(state = initialState, action){
 
     switch(action.type){
 
-        case "GET_USERS":
+        case LOGIN:
             return {
                 ...state,
-                users:action.payload,
-                loading:false
-
+                accessToken:action.payload.accessToken,
             }
         default: return state
     }
