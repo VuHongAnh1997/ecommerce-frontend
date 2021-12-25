@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import LoginService from "../service/loginService";
+import UserService from "../service/userService";
 import { useNavigate } from 'react-router-dom';
 import {useDispatch} from "react-redux";
 import {login} from "../store/actions/usersActions";
@@ -25,7 +25,9 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        dispatch(login(formData))
+        if(dispatch(login(formData))) {
+            navigate("/home")
+        }
     }
 
    return (

@@ -3,16 +3,20 @@ import axios from "axios";
 
 const httpClient = axios.create({
     baseURL: "http://localhost:8080",
-    timeout: 1000
 })
 
-httpClient.interceptors.request.use(function (config) {
 
-    const accessToken = localStorage.accessToken
-    if(accessToken) {
-        config.headers.Authorization =  accessToken;
-    }
-    return config;
-});
+httpClient.interceptors.request.use(
+    async config => {
+        const token = localStorage.getItem("token")
+        config.headers = {
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/json',
+        }
+        return config;
+    },
+    error => {
+        Promise.reject(error).then()
+    });
 
 export default httpClient

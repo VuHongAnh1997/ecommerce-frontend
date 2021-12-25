@@ -1,6 +1,10 @@
-.app {
+@import "~bootstrap/scss/bootstrap";
 
-  .main {
-    margin-left: 250px;
+.app {
+  font-family: Inter sans-serif;
+
+  .app__right {
+    margin-left: 290px;
+    width: calc(100vw - 290px);
   }
 }

@@ -1,0 +1,32 @@
+.sidebar {
+  position: fixed;
+  width: 290px;
+  height: 100vh;
+  top: 0;
+  left: 0;
+
+  .sidebar__logo {
+    img {
+      width: 180px;
+      height: 150px;
+    }
+  }
+
+  .sidebar__items {
+    height: 250px;
+    overflow-y: auto;
+    .nav-item {
+      border-bottom: 1px solid #f7f7f7;
+
+      &:hover {
+        background-color: #f7f7f7;
+
+        a {
+          color: #78cccd !important;
+          text-decoration: underline;
+        }
+      }
+    }
+
+  }
+}
