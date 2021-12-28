@@ -1,8 +1,11 @@
 import React, {useState} from "react";
-import UserService from "../service/userService";
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import {useDispatch} from "react-redux";
 import {login} from "../store/actions/usersActions";
+import {Formik, Form, Field, ErrorMessage, useFormik} from 'formik';
+import * as Yup from 'yup';
+import banner from '../assets/images/pages/login/banner.webp'
+import '../assets/scss/pages/login.scss'
 
 const Login = () => {
 
@@ -10,42 +13,66 @@ const Login = () => {
 
     const dispatch = useDispatch()
 
-    const [formData, setFormData] = useState({
-        username: "",
-        password: ""
-    })
-
-    const onChangeUserName = (e) => {
-        setFormData({...formData, username: e.target.value})
-    }
-
-    const onChangePassword = (e) => {
-        setFormData({...formData, password: e.target.value})
-    }
-
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        if(dispatch(login(formData))) {
-            navigate("/home")
+    const handleSubmit = async (values) => {
+        const formData = {
+            username: values.username,
+            password: values.password
+        }
+        if (dispatch(login(formData))) {
+            navigate("/")
         }
     }
 
-   return (
+    const formik = useFormik({
+        initialValues: {
+            username: "",
+            password: ""
+        },
+        validationSchema: Yup.object({
+            username: Yup.string().required("Vui lòng nhập email hoặc số điện thoại"),
+            password: Yup.string().required("Vui lòng nhập mật khẩu")
+        }),
+        onSubmit: values => {
+            handleSubmit(values).then()
+        }
+    })
+
+
+    return (
         <div className="login">
-            <form onSubmit={(e) => handleSubmit(e)}>
-                <div className="form-group">
-                    <label htmlFor="username">User Name</label>
-                    <input type="text" className="form-control" id="username" placeholder="Nhập số điện thọai"
-                           value={formData.username} onChange={(e) => onChangeUserName(e)}/>
+            <img src={banner} alt="Banner"/>
+            <form onSubmit={formik.handleSubmit} className="mt-5 text-center">
+                <div className="mb-3">
+                    <input id="username" className="mr-3" type="text" {...formik.getFieldProps('username')}
+                           placeholder="Nhập email hoặc số điện thoại"/>
+                    {
+                        formik.touched.username && formik.errors.username ? (
+                            <div className="text-danger mt-2">{formik.errors.username}</div>
+                        ) : null
+                    }
                 </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" className="form-control" id="password" placeholder="Password"
-                           value={formData.password} onChange={(e) => onChangePassword(e)} />
+
+                <div>
+                    <input id="password" type="text" {...formik.getFieldProps('password')} placeholder="Mật khẩu"/>
+                    {
+                        formik.touched.password && formik.errors.password ? (
+                            <div className="text-danger mt-2">{formik.errors.password}</div>
+                        ) : null
+                    }
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+
+                <button className="login__btn mt-3" type="submit">Đăng nhập</button>
+
             </form>
+
+            <div className="login__link d-flex flex-column align-content-center mt-5">
+                <div className="text-center mb-1">Về trang chủ</div>
+                <div className="text-center mb-1">Đăng ký</div>
+                <div className="text-center">Quên mật khẩu ?</div>
+            </div>
         </div>
+
+
     )
 }
 

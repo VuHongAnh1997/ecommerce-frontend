@@ -26,7 +26,7 @@ const Sidebar = () => {
 
     return (
         <div className="sidebar pt-3">
-            <div className="sidebar__logo">
+            <div className="sidebar__logo text-center">
                 <img src={logoIcon} alt="Logo icon"/>
             </div>
             <nav className="d-flex justify-content-between w-100 px-5 mt-5">
