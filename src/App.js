@@ -9,6 +9,7 @@ import Footer from "./component/Footer";
 import Login from "./pages/Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../src/assets/scss/app.scss'
+import Clothes from "./pages/Clothes";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Routes>
                     <Route index element={<Home/>}/>
                     <Route path="/login" element={<Login/>}/>
+                    <Route path="/clothes" element={<Clothes />} />
                 </Routes>
                 <Footer/>
             </div>
