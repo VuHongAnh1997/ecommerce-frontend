@@ -18,3 +18,9 @@ code {
   url("./fonts/Inter-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Quicksand";
+  src: local("Quicksand"),
+  url("./fonts/Quicksand-Regular.ttf") format("truetype");
+}
+

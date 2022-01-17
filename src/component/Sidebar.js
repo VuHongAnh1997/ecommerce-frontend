@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {FiHeart, FiSearch, FiShoppingCart, FiUser} from "react-icons/all";
 import '../assets/scss/component/sidebar/sidebar.scss'
 import logoIcon from '../../src/assets/images/component/sidebar/logo.jpg'
@@ -10,6 +10,7 @@ import {Nav, NavItem, NavLink} from "react-bootstrap";
 const Sidebar = () => {
 
     const dispatch = useDispatch()
+    const navigate = useNavigate();
     const {menuPaths, accessToken, userDetails} = useSelector(state => state.user)
 
     useEffect(() => {
@@ -47,7 +48,7 @@ const Sidebar = () => {
             <Nav className="sidebar__items text-center mt-5 text-uppercase text-black">
                 {
                     menuPaths.map(item => (
-                        <NavItem key={item.path} className="p-1 w-100">
+                        <NavItem key={item.path} className="p-1 w-100" onClick={() => navigate(item.path)}>
                             <NavLink href="#" className="text-black">
                                 {item.name}
                             </NavLink>

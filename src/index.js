@@ -9,6 +9,7 @@ import {persistor, store} from "./store/store";
 import {BrowserRouter} from "react-router-dom";
 import {PersistGate} from "redux-persist/integration/react";
 import './fonts/Inter-Regular.ttf'
+import './fonts/Quicksand-Regular.ttf'
 
 ReactDOM.render(
     <React.StrictMode>

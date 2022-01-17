@@ -9,6 +9,8 @@ import Footer from "./component/Footer";
 import Login from "./pages/Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../src/assets/scss/app.scss'
+import MenClothes from "./pages/MenClothes";
+import ProductDetail from "./pages/ProductDetail";
 
 function App() {
     return (
@@ -18,6 +20,8 @@ function App() {
                 <Routes>
                     <Route index element={<Home/>}/>
                     <Route path="/login" element={<Login/>}/>
+                    <Route path="/men-clothes" element={<MenClothes />} />
+                    <Route path="/product-detail" element={<ProductDetail />} />
                 </Routes>
                 <Footer/>
             </div>

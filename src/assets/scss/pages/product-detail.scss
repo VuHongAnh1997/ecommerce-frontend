@@ -1,0 +1,122 @@
+.product-detail {
+  font-family: Quicksand, sans-serif;
+
+  .breadcrumb {
+    padding: 20px 20px 20px 200px;
+    list-style: none;
+    background-color: #eee;
+    font-weight: 500;
+
+    li {
+      display: inline;
+
+      & + li:before {
+        padding: 8px;
+        color: black;
+        content: "/\00a0";
+      }
+
+      a {
+        color: #2d2d2d;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+          color: #78cccd;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .product-detail__main {
+    margin-top: 3rem;
+
+    .info {
+      padding-left: 200px;
+
+      .info__left {
+
+      }
+
+      .info__right {
+        padding-left: 2.5rem;
+
+        .info__right__price {
+          color: red;
+          font-weight: 700;
+          font-size: 24px;
+        }
+
+        .info__right_color {
+          a {
+            display: block;
+            position: relative;
+            width: 75px;
+            text-decoration: none;
+
+            img {
+              width: 100%;
+              height: 75px;
+              object-fit: cover;
+            }
+          }
+
+          .active {
+            border: 1px solid #e42127;
+
+            &::before {
+              content: '';
+              bottom: 0;
+              right: 0;
+              width: 14px;
+              height: 14px;
+              position: absolute;
+              background: url("../../images/pages/product-details/bg-product.png");
+            }
+          }
+        }
+
+        .info__right__size {
+          width: 200px;
+
+          .size-border {
+            cursor: pointer;
+
+            div {
+              border: 1px solid #ddd;
+              padding: 6px 8px;
+              margin-right: 10px;
+            }
+
+            .size-active {
+              border: 1px solid red;
+            }
+          }
+        }
+
+        .btn-action {
+          button {
+            width: 150px;
+          }
+          .add-to-cart {
+            margin-right: 30px;
+          }
+        }
+
+        .list-store {
+          background: #000;
+          color: white;
+          text-align: center;
+          height: 45px;
+          cursor: pointer;
+
+          img {
+            width: 45px;
+            height: 45px;
+          }
+        }
+      }
+    }
+  }
+}
