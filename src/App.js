@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../src/assets/scss/app.scss'
 import MenClothes from "./pages/MenClothes";
 import ProductDetail from "./pages/ProductDetail";
+import Clothes from "./pages/Clothes";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/login" element={<Login/>}/>
                     <Route path="/men-clothes" element={<MenClothes />} />
                     <Route path="/product-detail" element={<ProductDetail />} />
+                    <Route path="/clothes" element={<Clothes />} />
                 </Routes>
                 <Footer/>
             </div>
