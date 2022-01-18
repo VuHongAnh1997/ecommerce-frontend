@@ -8,19 +8,19 @@ import '../assets/scss/pages/clothes.scss'
 const Clothes = () => {
 
     return (
-        <Row className="mb-4">
-            <Col xs={4} className="position-relative test">
-                <img className="test2" src={product1} alt="Product 1"/>
-                <div className="test1">
-                    <img src={product1} alt=""/>
-                    <img src={product2} alt=""/>
-                    <img src={product3} alt=""/>
-                </div>
-                <div className="test3">
+        <div className="px-5">
+            <Row className="mb-4">
+                <Col xs={3} className="position-relative test">
+                    <img className="test2" src={product1} alt="Product 1"/>
+                    <div className="test1">
+                        <img src={product1} alt=""/>
+                        <img src={product2} alt=""/>
+                        <img src={product3} alt=""/>
+                    </div>
+                </Col>
+            </Row>
+        </div>
 
-                </div>
-            </Col>
-        </Row>
     )
 }
 

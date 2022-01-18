@@ -1,5 +1,6 @@
 
 .test {
+  overflow: hidden;
 
   .test2 {
     height: 300px;
@@ -9,33 +10,19 @@
 
     position: absolute;
     display: flex;
-    transition: position 1s;
-    bottom: 0;
+    transition: all 1s ease;
+    bottom: -100%;
 
     img {
       width: 60px;
       height: 60px;
-      z-index: 1;
     }
-  }
-
-  .test3 {
-    height: 50px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    z-index: 2;
-    background: red;
   }
 
   &:hover {
 
     .test1 {
-      bottom: 5px;
-      img {
-        z-index: 3;
-        bottom: 10px;
-      }
+      bottom: 0;
     }
   }
 }

@@ -29,24 +29,31 @@ const MenClothes = () => {
 
                 {/*component riêng*/}
                 <div className="products">
-                    <Row>
-                        <Col sm={4} md={3} className="product">
-                            <img src={product1} alt=""/>
+                    <div className="d-flex justify-content-between">
+                        <div className="product">
+                            <div className="product_main">
+                                <img src={product1} alt=""/>
+                                <div className="d-flex justify-content-between bg-white position-absolute product_swatch">
+                                    <img src={product2} alt=""/>
+                                    <img src={product2} alt=""/>
+                                    <img src={product2} alt=""/>
+                                </div>
+                            </div>
                             <div className="product-price">285,000 ₫</div>
-                        </Col>
-                        <Col sm={4} md={3} className="product">
+                        </div>
+                        <div className="product">
                             <img src={product2} alt=""/>
                             <div className="product-price">285,000 ₫</div>
-                        </Col>
-                        <Col sm={4} md={3} className="product">
+                        </div>
+                        <div className="product">
                             <img src={product3} alt=""/>
                             <div className="product-price">285,000 ₫</div>
-                        </Col>
-                        <Col sm={4} md={3} className="product">
+                        </div>
+                        <div className="product">
                             <img src={product4} alt=""/>
                             <div className="product-price">385,000 ₫</div>
-                        </Col>
-                    </Row>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
