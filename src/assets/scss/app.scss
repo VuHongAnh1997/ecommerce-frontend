@@ -1,11 +1,13 @@
 @import "~bootstrap/scss/bootstrap";
 @import "../scss/common/common";
 
-.app {
-  font-family: Quicksand sans-serif !important;
+body {
+  font-family: Quicksand;
 
-  .app__right {
-    margin-left: 290px;
-    width: calc(100vw - 290px);
+  .app {
+    .app__right {
+      margin-left: 290px;
+      width: calc(100vw - 290px);
+    }
   }
 }

@@ -3,11 +3,11 @@ import {LOGIN, MENU, USER_DETAILS} from '../types'
 const initialState = {
     accessToken: null,
     menuPaths: [
-        {name: 'New Arrivals', path: '/new-arrivals'},
-        {name: 'Đồ nam', path: '/men-clothes'},
-        {name: 'Đồ nữ', path: '/women-clothes'},
-        {name: 'Đồ đôi', path: '/couple-clothes'},
-        {name: 'Áo khoác', path: '/coast'},
+        {name: 'New Arrivals', path: '/new-arrivals', id: 1},
+        {name: 'Đồ nam', path: '/men-clothes', id: 2},
+        {name: 'Đồ nữ', path: '/women-clothes', id: 3},
+        {name: 'Đồ đôi', path: '/couple-clothes', id: 4},
+        {name: 'Áo khoác', path: '/coast', id: 5},
         // {name: 'Phụ kiện', path: '/accessory'}
     ],
     userDetails: {}

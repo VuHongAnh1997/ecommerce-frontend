@@ -4,7 +4,7 @@ import {FiHeart, FiSearch, FiShoppingCart, FiUser} from "react-icons/all";
 import '../assets/scss/component/sidebar/sidebar.scss'
 import logoIcon from '../../src/assets/images/component/sidebar/logo.jpg'
 import {useDispatch, useSelector} from "react-redux";
-import {getMenuByRoleID, getUserDetails} from "../store/actions/usersActions";
+import {getMenuByRoleID, getUserDetails} from "../store/actions/usersAction";
 import {Nav, NavItem, NavLink} from "react-bootstrap";
 
 const Sidebar = () => {

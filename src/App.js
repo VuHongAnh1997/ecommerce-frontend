@@ -21,9 +21,9 @@ function App() {
                 <Routes>
                     <Route index element={<Home/>}/>
                     <Route path="/login" element={<Login/>}/>
-                    <Route path="/men-clothes" element={<MenClothes />} />
-                    <Route path="/product-detail" element={<ProductDetail />} />
-                    <Route path="/clothes" element={<Clothes />} />
+                    <Route path="/men-clothes" element={<MenClothes/>}/>
+                    <Route path="/product-detail" element={<ProductDetail/>}/>
+                    <Route path="/clothes" element={<Clothes/>}/>
                 </Routes>
                 <Footer/>
             </div>

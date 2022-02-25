@@ -79,7 +79,8 @@ const ProductDetail = () => {
                                         <Button color="primary" className="add-to-cart">THÊM VÀO GIỎ</Button>
                                         <Button color="primary">MUA NGAY</Button>
                                     </div>
-                                    <div className="d-flex align-items-center justify-content-center list-store px-4 my-4">
+                                    <div
+                                        className="d-flex align-items-center justify-content-center list-store px-4 my-4">
                                         <img src={store} alt=""/>
                                         <span>Đang có tại các cửa hàng</span>
                                     </div>
