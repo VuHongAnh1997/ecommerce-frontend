@@ -3,18 +3,25 @@
   width: 290px;
   height: 100vh;
   top: 0;
-  left: 0;
+  transition-duration: 0.9s;
+  padding-top: 20px;
+  background: wheat;
 
   .sidebar__logo {
     img {
       width: 180px;
-      height: 150px;
+      height: 108px;
+    }
+
+    .sidebar__logo__close__icon {
+      margin-left: 10px;
     }
   }
 
   .sidebar__items {
     height: 250px;
     overflow-y: auto;
+
     .nav-item {
       border-bottom: 1px solid #f7f7f7;
 
@@ -29,4 +36,12 @@
     }
 
   }
+}
+
+.sidebar__open {
+  left: 0;
+}
+
+.sidebar__close {
+  left: -100%;
 }

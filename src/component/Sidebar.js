@@ -1,62 +1,69 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
-import {FiHeart, FiSearch, FiShoppingCart, FiUser} from "react-icons/all";
+import {AiOutlineClose, FiHeart, FiMenu, FiSearch, FiShoppingCart, FiUser} from "react-icons/all";
 import '../assets/scss/component/sidebar/sidebar.scss'
 import logoIcon from '../../src/assets/images/component/sidebar/logo.jpg'
 import {useDispatch, useSelector} from "react-redux";
 import {getMenuByRoleID, getUserDetails} from "../store/actions/usersAction";
 import {Nav, NavItem, NavLink} from "react-bootstrap";
+import TopBar from "./TopBar";
 
 const Sidebar = () => {
 
     const dispatch = useDispatch()
     const navigate = useNavigate();
     const {menuPaths, accessToken, userDetails} = useSelector(state => state.user)
+    const [isOpen, setIsOpen] = useState(false)
 
     useEffect(() => {
-        if(accessToken) {
+        if (accessToken) {
             dispatch(getUserDetails())
         }
     }, [accessToken])
 
     useEffect(() => {
-        if(accessToken) {
+        if (accessToken) {
             dispatch(getMenuByRoleID(userDetails.role.id))
         }
     }, [accessToken])
 
     return (
-        <div className="sidebar pt-3">
-            <div className="sidebar__logo text-center">
-                <img src={logoIcon} alt="Logo icon"/>
-            </div>
-            <nav className="d-flex justify-content-between w-100 px-5 mt-5">
-                <Link to="/login">
-                    <FiUser />
-                </Link>
-                <span>
-                    <FiSearch />
+        <>
+            <TopBar onClickTopBar={() => setIsOpen(!isOpen)}/>
+            <div className={"sidebar" + (isOpen ? " sidebar__open" : " sidebar__close")}>
+                <div className="sidebar__logo text-center">
+                    <img src={logoIcon} alt="Logo icon"/>
+                    {isOpen ? <AiOutlineClose className="sidebar__logo__close__icon"
+                                              onClick={() => setIsOpen(!isOpen)}/> : null}
+                </div>
+                <nav className="d-flex justify-content-between w-100 px-5 mt-5">
+                    <Link to="/login">
+                        <FiUser/>
+                    </Link>
+                    <span>
+                    <FiSearch/>
                 </span>
-                <span>
-                    <FiHeart />
+                    <span>
+                    <FiHeart/>
                 </span>
-                <span>
-                    <FiShoppingCart />
+                    <span>
+                    <FiShoppingCart/>
                 </span>
-            </nav>
+                </nav>
 
-            <Nav className="sidebar__items text-center mt-5 text-uppercase text-black">
-                {
-                    menuPaths.map(item => (
-                        <NavItem key={item.path} className="p-1 w-100" onClick={() => navigate(item.path)}>
-                            <NavLink href="#" className="text-black">
-                                {item.name}
-                            </NavLink>
-                        </NavItem>
-                    ))
-                }
-            </Nav>
-        </div>
+                <Nav className="sidebar__items text-center mt-5 text-uppercase text-black">
+                    {
+                        menuPaths.map(item => (
+                            <NavItem key={item.path} className="p-1 w-100" onClick={() => navigate(item.path)}>
+                                <NavLink href="#" className="text-black">
+                                    {item.name}
+                                </NavLink>
+                            </NavItem>
+                        ))
+                    }
+                </Nav>
+            </div>
+        </>
     )
 }
 
