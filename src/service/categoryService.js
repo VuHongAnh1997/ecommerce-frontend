@@ -1,4 +1,3 @@
-import React from "react";
 import httpClient from "../config/httpClient";
 
 class CategoryService {

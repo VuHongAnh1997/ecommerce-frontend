@@ -1,18 +1,18 @@
 .men-clothes {
 
   .men-clothes__main {
-    padding: 1rem 8rem;
-
-
 
     .products {
 
       .product {
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         cursor: pointer;
+        margin-bottom: 2rem;
 
         .product_main {
-          width: 250px;
+          //width: 250px;
           position: relative;
           overflow: hidden;
           background: white;
@@ -28,8 +28,6 @@
             }
           }
         }
-
-
 
         .product_swatch {
           width: 100%;

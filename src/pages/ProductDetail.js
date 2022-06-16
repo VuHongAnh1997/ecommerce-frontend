@@ -3,8 +3,8 @@ import '../assets/scss/pages/product-detail.scss'
 import product1 from '../assets/images/pages/men-clothes/product1.jpg'
 import product1_2 from '../assets/images/pages/men-clothes/product1-2.jpg'
 import store from '../assets/images/pages/product-details/store.png'
-import {Button} from "react-bootstrap";
 import {Formik, Field, Form} from 'formik';
+import {Button} from "reactstrap";
 
 const SIZE = ["M", "L", "XL"]
 

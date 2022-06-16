@@ -1,0 +1,77 @@
+.sidebar__mobile {
+  top: 0;
+  position: fixed;
+  z-index: 100;
+
+  width: 290px;
+  height: 100vh;
+  padding-top: 20px;
+
+  transition-duration: 0.9s;
+  background: white;
+
+  .sidebar__mobile__logo {
+    display: flex;
+    align-items: start;
+    padding-left: 50px;
+
+    img {
+      width: 180px;
+      height: 108px;
+    }
+
+    .sidebar__mobile__logo__close__icon {
+      margin-left: 20px;
+      margin-top: 10px;
+      color: #000;
+    }
+  }
+
+  .sidebar__mobile__nav {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: #7d7d7d;
+    }
+  }
+
+  .sidebar__mobile__items {
+    height: 250px;
+    overflow-y: auto;
+
+    .nav-item {
+      border-bottom: 1px solid #f7f7f7;
+
+      &:hover {
+        background-color: #f7f7f7;
+
+        a {
+          color: #78cccd !important;
+          text-decoration: underline;
+        }
+      }
+    }
+
+  }
+
+  .zalo-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .social-media {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+  }
+}
+
+.sidebar__mobile__open {
+  left: 0;
+}
+
+.sidebar__mobile__close {
+  left: -100%;
+}

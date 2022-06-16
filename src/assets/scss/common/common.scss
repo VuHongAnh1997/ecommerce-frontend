@@ -3,3 +3,19 @@
   align-content: center;
   justify-content: center;
 }
+
+// define fontsize common
+.fz-12 {
+  font-size: 12px;
+}
+
+.fz-16 {
+  font-size: 16px;
+}
+
+.hover-img-item {
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}

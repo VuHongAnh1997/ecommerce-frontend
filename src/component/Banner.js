@@ -9,7 +9,7 @@ import {Carousel} from "react-responsive-carousel";
 const Banner = () => {
 
     return (
-        <Carousel showThumbs={false} emulateTouch={true} showArrows={false}>
+        <Carousel showThumbs={false} emulateTouch={true} showArrows={false} showStatus={false} interval={1000} autoPlay={true} infiniteLoop={true}>
             <div>
                 <a href="#">
                     <img src={intro1}  alt="Intro 1"/>
