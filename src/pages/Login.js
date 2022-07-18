@@ -40,7 +40,7 @@ const Login = () => {
 
     return (
         <div className="login">
-            <img src={banner} alt="Banner"/>
+            <img className="w-100" src={banner} alt="Banner"/>
             <form onSubmit={formik.handleSubmit} className="mt-5 text-center">
                 <div className="mb-3">
                     <input id="username" className="mr-3" type="text" {...formik.getFieldProps('username')}

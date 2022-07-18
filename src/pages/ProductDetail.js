@@ -4,7 +4,7 @@ import product1 from '../assets/images/pages/men-clothes/product1.jpg'
 import product1_2 from '../assets/images/pages/men-clothes/product1-2.jpg'
 import store from '../assets/images/pages/product-details/store.png'
 import {Formik, Field, Form} from 'formik';
-import {Button} from "reactstrap";
+import {Button, Col, Container, Row} from "reactstrap";
 
 const SIZE = ["M", "L", "XL"]
 
@@ -25,7 +25,7 @@ const ProductDetail = () => {
             }}>
             {({values}) => (
                 <Form>
-                    <section className="product-detail">
+                    <section className="product-detail-container">
 
                         {/*breadcrumb*/}
                         <ul className="breadcrumb">
@@ -35,14 +35,14 @@ const ProductDetail = () => {
                             <li><a href="#">Áo thun</a></li>
                         </ul>
 
-                        <section className="product-detail__main">
+                        <Container className="product-detail__main">
 
-                            <section className="info d-flex">
+                            <Row className="info justify-content-center">
 
-                                <div className="info__left">
-                                    <img src={product1} alt=""/>
-                                </div>
-                                <div className="info__right">
+                                <Col xs={12} md={12} lg={4} className="info__left text-center mb-4">
+                                    <img className="mw-100" src={product1} alt=""/>
+                                </Col>
+                                <Col xs={12} md={12} lg={8} className="info__right">
                                     <h4>ÁO THUN U1ATN11102FOSHT</h4>
                                     <div className="info__right__price">285,000₫</div>
                                     <div className="mt-1">Hướng dẫn chọn size</div>
@@ -76,7 +76,7 @@ const ProductDetail = () => {
                                         </div>
                                     </div>
                                     <div className="my-2 btn-action">
-                                        <Button color="primary" className="add-to-cart">THÊM VÀO GIỎ</Button>
+                                        <Button color="primary" className="add-to-cart" outline>THÊM VÀO GIỎ</Button>
                                         <Button color="primary">MUA NGAY</Button>
                                     </div>
                                     <div
@@ -90,13 +90,13 @@ const ProductDetail = () => {
                                         <p>» ĐỔI HÀNG TRONG VÒNG 30 NGÀY</p>
                                         <p>» HOTLINE BÁN HÀNG 1900 633 501</p>
                                     </div>
-                                </div>
-                            </section>
+                                </Col>
+                            </Row>
 
                             <section className="description">
 
                             </section>
-                        </section>
+                        </Container>
                     </section>
                 </Form>
             )}

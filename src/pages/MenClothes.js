@@ -39,25 +39,25 @@ const MenClothes = () => {
                 {/*component riêng*/}
                 <Container className="products">
                     <Row>
-                        <Col className="product" xs={4}>
+                        <Col className="product" xs={6} md={6} lg={3}>
                             <div className="product_main">
                                 <img src={product1} alt=""/>
                             </div>
                             <div className="product-price">285,000 ₫</div>
                         </Col>
-                        <Col className="product" xs={4}>
+                        <Col className="product" xs={6} md={6} lg={3}>
                             <div className="product_main">
                                 <img src={product2} alt=""/>
                             </div>
                             <div className="product-price">285,000 ₫</div>
                         </Col>
-                        <Col className="product" xs={4}>
+                        <Col className="product" xs={6} md={6} lg={3}>
                             <div className="product_main">
                                 <img src={product3} alt=""/>
                             </div>
                             <div className="product-price">285,000 ₫</div>
                         </Col>
-                        <Col className="product" xs={4}>
+                        <Col className="product" xs={6} md={6} lg={3}>
                             <div className="product_main">
                                 <img src={product4} alt=""/>
                             </div>

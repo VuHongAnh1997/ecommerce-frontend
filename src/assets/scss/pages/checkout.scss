@@ -1,0 +1,22 @@
+.checkout-container {
+  input, select, textarea {
+    width: 100%;
+    border: 1px solid #d1d1d1;
+    font-size: 12px;
+    border-radius: 3px;
+    padding: 5px 3px
+  }
+
+  .cart-info {
+    .promotion {
+      input {
+        width: 58%;
+        margin-right: 2%;
+      }
+
+      button {
+        width: 40%;
+      }
+    }
+  }
+}

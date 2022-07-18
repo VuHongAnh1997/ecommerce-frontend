@@ -12,6 +12,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Clothes from "./pages/Clothes";
 import Checkout from "./pages/Checkout";
 import {useState} from "react";
+import {Container} from "reactstrap";
 
 function App() {
 
@@ -19,17 +20,18 @@ function App() {
     return (
         <>
             <div className="app">
-
-                <Sidebar setIsBlur={setIsBlur} />
+                <Sidebar setIsBlur={setIsBlur}/>
                 <div className="app__right">
-                    <Routes>
-                        <Route index element={<Home/>}/>
-                        <Route path="/login" element={<Login/>}/>
-                        <Route path="/men-clothes" element={<MenClothes/>}/>
-                        <Route path="/product-detail" element={<ProductDetail/>}/>
-                        <Route path="/clothes" element={<Clothes/>}/>
-                        <Route path="/checkout" element={<Checkout/>}/>
-                    </Routes>
+                    <Container>
+                        <Routes>
+                            <Route index element={<Home/>}/>
+                            <Route path="/login" element={<Login/>}/>
+                            <Route path="/men-clothes" element={<MenClothes/>}/>
+                            <Route path="/product-detail" element={<ProductDetail/>}/>
+                            <Route path="/clothes" element={<Clothes/>}/>
+                            <Route path="/checkout" element={<Checkout/>}/>
+                        </Routes>
+                    </Container>
                     <Footer/>
                 </div>
             </div>

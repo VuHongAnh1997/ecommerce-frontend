@@ -1,8 +1,8 @@
-.product-detail {
+.product-detail-container {
   font-family: Quicksand, sans-serif;
 
   .breadcrumb {
-    padding: 20px 20px 20px 200px;
+    padding: 20px 20px 20px 20px;
     list-style: none;
     background-color: #eee;
     font-weight: 500;
@@ -33,14 +33,14 @@
     margin-top: 3rem;
 
     .info {
-      padding-left: 200px;
 
       .info__left {
-
+        img {
+          object-fit: cover;
+        }
       }
 
       .info__right {
-        padding-left: 2.5rem;
 
         .info__right__price {
           color: red;
@@ -96,11 +96,10 @@
         }
 
         .btn-action {
+          display: flex;
+          justify-content: space-between;
           button {
-            width: 150px;
-          }
-          .add-to-cart {
-            margin-right: 30px;
+            width: 49%
           }
         }
 
